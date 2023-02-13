@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 
 export default function TextForm(props) {
-  const [text, setText] = useState("type here");
+  const [text, setText] = useState("");
 
   function ReverseString(str) {
 
@@ -79,7 +79,7 @@ export default function TextForm(props) {
         </div>
         <div className="mb-3" style={{ color: props.mode === "light" ? "dark" : "light" }} >
           <h1><label htmlFor="exampleFormControlTextarea1" className="form-label">{props.enter_text_here}</label></h1>
-          <textarea className="form-control" style={{ backgroundColor: props.mode === "light" ? "white" : "#121038", color: props.mode === "dark" ? "white" : "black" }} value={text} id="exampleFormControlTextarea1" rows="10" onChange={handleonchange}></textarea>
+          <textarea className="form-control" style={{ backgroundColor: props.mode === "light" ? "white" : "#121038", color: props.mode === "dark" ? "white" : "black" }} placeholder="Type here"  value={text}  rows="10" onChange={handleonchange}></textarea>
         </div>
         <button className="btn btn-success mx-2 my-2" onClick={handle_up_click}>Convert To UpperCase</button>
         <button className="btn btn-danger mx-2 my-2" onClick={handle_lo_click}>Convert To lowerCase</button>
@@ -97,7 +97,7 @@ export default function TextForm(props) {
           Words = <b>{text.length===0?0:text.split(" ").length}</b> and Characters =<b> {text.length}</b>
         </p>
         <p>
-          Total Time To Read=<b>{(text.split(" ").length - 1) * 0.008 * 60}</b> seconds.
+          Total Time To Read=<b>{(text.length) * 0.0008 * 60}</b> seconds.
         </p>
         <h1>
           Preview
