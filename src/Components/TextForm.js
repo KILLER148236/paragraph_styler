@@ -94,7 +94,7 @@ export default function TextForm(props) {
           Your Text Summary:
         </h1>
         <p>
-          Words = <b>{text.length===0?0:text.split(" ").length}</b> and Characters =<b> {text.length}</b>
+          Words =<strong>{text.split(/\s+/).filter((element)=>{return element!==""}).length}</strong> and Characters =<b> {text.length}</b>
         </p>
         <p>
           Total Time To Read=<b>{(text.length) * 0.0008 * 60}</b> seconds.
