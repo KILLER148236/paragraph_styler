@@ -57,7 +57,7 @@ function App() {
 
     <Router>
       <Navbar title="TextUtils" aboutwebsite="About us" mode={mode} toggle={toggleMode} text={btntxt} />
-
+      {/* <TextForm your_name="Your Name" enter_text_here="Please write some text" mode={mode} alert={showalert} /> */}
       <Alert alert={alert}></Alert>
       <div className="container">
 
@@ -68,7 +68,7 @@ function App() {
   
         
 
-          <Route exact path="/" element={<TextForm your_name="Your Name" enter_text_here="Please write some text" mode={mode} alert={showalert} />}/>
+          <Route exact path="/text_here" element={<TextForm your_name="Your Name" enter_text_here="Please write some text" mode={mode} alert={showalert} />}/>
           
           
         </Routes>
