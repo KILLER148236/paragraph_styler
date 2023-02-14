@@ -10,7 +10,7 @@ import About from './Components/About';
 import {
   BrowserRouter as Router,
   Routes,
-  Route,
+  Route,redirect
 } from "react-router-dom";
 
 
@@ -31,7 +31,7 @@ function App() {
 
     setTimeout(() => {
       setalert(null);
-    }, 1500);
+    }, 2000);
   }
 
   const toggleMode = () => {
@@ -57,23 +57,24 @@ function App() {
 
     <Router>
       <Navbar title="TextUtils" aboutwebsite="About us" mode={mode} toggle={toggleMode} text={btntxt} />
+
       {/* <TextForm your_name="Your Name" enter_text_here="Please write some text" mode={mode} alert={showalert} /> */}
       <Alert alert={alert}></Alert>
+
       <div className="container">
 
 
 
         <Routes>
-          <Route exact path="/about" element={<About/>}/>
-  
-        
+          <Route  path="/about" element={<About/>} />
 
-          <Route exact path="/text_here" element={<TextForm your_name="Your Name" enter_text_here="Please write some text" mode={mode} alert={showalert} />}/>
-          
+
+
+          <Route  path="/paragraph_styler" element={<TextForm your_name="Your Name" enter_text_here="Please write some text" mode={mode} alert={showalert} />} />
           
         </Routes>
 
-        
+
       </div>
     </Router>
 

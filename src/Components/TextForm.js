@@ -52,7 +52,7 @@ export default function TextForm(props) {
     if(text.length>0){
     props.alert("Text area set to empty","warning")
   }else{
-    props.alert("Text area is empty!! Enter some text","danger")
+    props.alert("Text area is already Empty!!","danger")
   }
   }
 
