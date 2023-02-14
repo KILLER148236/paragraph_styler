@@ -8,10 +8,7 @@ export default function TextForm(props) {
   function ReverseString(str) {
 
     // Check input
-    if (!str || str.length < 2 ||
-      typeof str !== 'string') {
-      return 'Not valid';
-    }
+   
 
     // Take empty array revArray
     const revArray = [];
@@ -28,7 +25,11 @@ export default function TextForm(props) {
   const reverse = () => {
     let str = ReverseString(text);
     setText(str);
+    if(text.length>0){
     props.alert("Text reversed!","warning")
+  }else{
+    props.alert("Text area is empty!! Enter some text","danger")
+  }
   }
 
   const handle_lo_click = () => {
@@ -36,7 +37,11 @@ export default function TextForm(props) {
     //console.log("lowercase button was clicked");
     let checklo = text.toLowerCase();
     setText(checklo);
+    if(text.length>0){
     props.alert("Converted To LowerCase!","warning")
+  }else{
+    props.alert("Text area is empty!! Enter some text","danger")
+  }
   }
 
   const handle_empty_click = () => {
@@ -44,7 +49,11 @@ export default function TextForm(props) {
 
     let newText = text.replace(text, "");
     setText(newText);
+    if(text.length>0){
     props.alert("Text area set to empty","warning")
+  }else{
+    props.alert("Text area is empty!! Enter some text","danger")
+  }
   }
 
   const handle_up_click = () => {
@@ -52,7 +61,11 @@ export default function TextForm(props) {
     // setText("you have updated the text area")
     let check = text.toUpperCase();
     setText(check);
+    if(text.length>0){
     props.alert("Converted To UpperCase!","warning")
+  }else{
+    props.alert("Text area is empty!! Enter some text","danger")
+  }
   }
   const handleonchange = (event) => {
     //console.log("text area was changed");
@@ -67,7 +80,11 @@ export default function TextForm(props) {
 
     let newtext = text.split(/[ ]+/);
     setText(newtext.join(" "));
+    if(text.length>0){
     props.alert("Extra Spaces handled!","success")
+  }else{
+    props.alert("Text area is empty!! Enter some text","danger")
+  }
   }
 
   return (
